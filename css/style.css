@@ -64,6 +64,7 @@ img {
     flex-direction: row-reverse;
     background-size: contain, 30rem;
     background-position: right, left bottom;
+    width: 100%;
   }
 }
 
@@ -78,6 +79,7 @@ img {
 @media (min-width: 768px) {
   .guest-image {
       margin: 0;
+      width: 50%;
   }
 }
 
@@ -106,6 +108,7 @@ img {
     background-size: 5rem;
     background-repeat: no-repeat;
     background-position: top left;
+    width: 60%;
   }
 
   .guest-button {
@@ -128,8 +131,7 @@ img {
     background-size: 8rem;
     padding-top: 3rem;
     position: relative;
-    left: -45px;
-    width: 42rem;
+    left: -45px;    
   }
 }
 
