@@ -14,21 +14,17 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  font-size: 3.2rem;
+body {  
   font-family: var(--primaryFont);
-  /* width: 37.5rem; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-size: 1.6rem;
 }
 
-@media (min-width: 1440px) {
-  body {
-    width: 144rem;
-  }
-}
+
 
 img {
   max-width: 100%;
@@ -36,33 +32,42 @@ img {
 }
 
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
+  width: 144rem;
+  
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 80rem;
-  }
+.guest::before{
+  position: absolute;
+  content: '';
+  background-image: url(../images/pattern-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 75rem;
+  height: 70rem;
+  
 }
+
 
 .guest {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem;
-  background-image: url(../images/pattern-bg.svg),
+/*   background-image: url(../images/pattern-bg.svg),
     url(../images/pattern-curve.svg);
   background-size: 37rem, 25rem;
   background-repeat: no-repeat;
-  background-position: top, left bottom;
+  background-position: top, left bottom; */
 }
 
 @media (min-width: 768px) {
   .guest {
     flex-direction: row-reverse;
-    background-size: contain, 30rem;
+    background-size: cover, 30rem;
     background-position: right, left bottom;
     width: 100%;
   }
@@ -90,8 +95,8 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  bottom: 0;
   background-color: #ffffff;
+  bottom: 0;
   border-radius: 50px;
   box-shadow: -30px 22px 53px 2px rgba(32, 32, 70, 0.52);
 }
@@ -103,18 +108,28 @@ img {
 @media (min-width: 768px) {
   .quote-sign {
     position: relative;
-    left: 10rem;
-    background-image: url(../images/pattern-quotes.svg);
-    background-size: 5rem;
+    left: 20rem;  
+    width: 50%;
+  }
+
+  .quote-sign::before {
+    position: absolute;
+    top: -5rem;
+    left: 8rem;
+    content: '';
+    background-image: url(../images/pattern-quotes.svg);    
     background-repeat: no-repeat;
     background-position: top left;
-    width: 60%;
+    width: 30rem;
+    height: 30rem;    
   }
 
   .guest-button {
-    bottom: -20px;
-    left: 50px;
+    
+    right: 50rem;
   }
+
+
 }
 
 .guest-quote {
@@ -125,13 +140,10 @@ img {
 
 @media (min-width: 768px) {
   .guest-quote {
-    font-size: 2rem;
-    text-align: left;
-    background-position: top left;
-    background-size: 8rem;
-    padding-top: 3rem;
     position: relative;
-    left: -45px;    
+    font-size: 3.2rem;
+    text-align: left;    
+    padding-top: 3rem; 
   }
 }
 
@@ -146,10 +158,9 @@ img {
 
 @media (min-width: 768px) {
   .guest-sign {
-    flex-direction: row;
-    gap: 1rem;
     position: relative;
-    left: -45px;
+    flex-direction: row;
+    gap: 1rem;    
   }
 }
 
