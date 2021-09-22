@@ -6,7 +6,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 60.5% /* 1rem = 10px */;
+  font-size: 60.5% /* 1rem = 10px */;  
 }
 *,
 *:before,
@@ -20,8 +20,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 100vh;
   font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -35,8 +38,14 @@ img {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 144rem;
-  
+  width: 37.5rem;
+   
+}
+
+@media (min-width:768px){
+  .container {
+    width: 144rem; 
+  }
 }
 
 .guest::before{
@@ -56,19 +65,12 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem;
-/*   background-image: url(../images/pattern-bg.svg),
-    url(../images/pattern-curve.svg);
-  background-size: 37rem, 25rem;
-  background-repeat: no-repeat;
-  background-position: top, left bottom; */
+  /* padding: 3rem; */
 }
 
 @media (min-width: 768px) {
   .guest {
     flex-direction: row-reverse;
-    background-size: cover, 30rem;
-    background-position: right, left bottom;
     width: 100%;
   }
 }
@@ -78,15 +80,19 @@ img {
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-bottom: 5rem;
+  padding: 3rem;
+  height: 100%;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .guest-image {
       margin: 0;
       width: 50%;
+      padding: 0;
   }
 }
+
 
 .guest-button {
   width: 10rem;
@@ -96,7 +102,7 @@ img {
   justify-content: space-around;
   align-items: center;
   background-color: #ffffff;
-  bottom: 0;
+  top: 32rem;
   border-radius: 50px;
   box-shadow: -30px 22px 53px 2px rgba(32, 32, 70, 0.52);
 }
@@ -105,12 +111,47 @@ img {
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+.guest::before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/pattern-bg.svg);
+  background-size: 40rem;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 60rem;
+  height: 60rem;
+  top: -10px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .quote-sign {
+    position: relative;
+    left: 6rem; 
+    width: 60%;  
+  }   
+
+  .guest-button {
+    top: 34rem;
+    left: 47rem;
+  }
+
+}
+
+@media (min-width:1025px) {
+
+  .guest::before {
+    background-size: cover;
+    width: 75rem;
+    height: 71rem;
+    top: -64px;
+  }
+
   .quote-sign {
     position: relative;
     left: 20rem;  
     width: 50%;
-  }
+  } 
 
   .quote-sign::before {
     position: absolute;
@@ -124,12 +165,10 @@ img {
     height: 30rem;    
   }
 
-  .guest-button {
-    
+  .guest-button {    
     right: 50rem;
+    top: 54rem;
   }
-
-
 }
 
 .guest-quote {
